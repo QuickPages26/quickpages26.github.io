@@ -427,23 +427,30 @@
       const formData = new FormData(this);
 
       try {
-        const response = await fetch('https://formspree.io/f/xrerbldw', {
+        const plan = document.querySelector('input[name="plan"]:checked')?.value || '';
+        const payload = {
+          owner_name: formData.get('owner_name'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          business_name: formData.get('business_name'),
+          plan: plan,
+          location: formData.get('location'),
+          services: formData.get('services'),
+          extra_notes: formData.get('extra_notes'),
+        };
+
+        // Send to Google Sheets (fire and forget — CORS blocks response reading)
+        fetch('https://script.google.com/macros/s/AKfycbzZwrSxdUk6dpD7h8XCPr1EQPv-IJjVb35Vzymhpjp7joXLWw2cz6he8glaEpKNgjv5xA/exec', {
           method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+          body: JSON.stringify(payload),
+          mode: 'no-cors',
         });
 
-        if (response.ok) {
-          const plan = document.querySelector('input[name="plan"]:checked')?.value || '';
-          if (plan.includes('One-Time')) {
-            window.location.href = 'https://buy.stripe.com/14A7sL2H7bzzbFDex93Nm03';
-          } else {
-            window.location.href = 'https://buy.stripe.com/8x23cv2H7477gZXcp13Nm01';
-          }
+        // Redirect to Stripe based on selected plan
+        if (plan.includes('One-Time')) {
+          window.location.href = 'https://buy.stripe.com/14A7sL2H7bzzbFDex93Nm03';
         } else {
-          btn.textContent = 'Submit & Continue to Payment →';
-          btn.disabled = false;
-          alert('Something went wrong. Please try again.');
+          window.location.href = 'https://buy.stripe.com/8x23cv2H7477gZXcp13Nm01';
         }
       } catch (err) {
         btn.textContent = 'Submit & Continue to Payment →';
