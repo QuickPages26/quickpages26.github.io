@@ -434,7 +434,12 @@
         });
 
         if (response.ok) {
-          window.location.href = 'https://buy.stripe.com/cNi00jftTdHHaBzdt53Nm00';
+          const plan = document.querySelector('input[name="plan"]:checked')?.value || '';
+          if (plan.includes('One-Time')) {
+            window.location.href = 'https://buy.stripe.com/cNi00jftTdHHaBzdt53Nm00';
+          } else {
+            window.location.href = 'https://buy.stripe.com/8x23cv2H7477gZXcp13Nm01';
+          }
         } else {
           btn.textContent = 'Submit & Continue to Payment →';
           btn.disabled = false;
