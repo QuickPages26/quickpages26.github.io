@@ -35,7 +35,7 @@
 
     .logo span { color: #1a1a2e; }
 
-    nav a {
+    .nav-links a {
       text-decoration: none;
       color: #1a1a2e;
       font-weight: 600;
@@ -43,7 +43,7 @@
       font-size: 0.95rem;
     }
 
-    nav a:hover { color: #2E86AB; }
+    .nav-links a:hover { color: #2E86AB; }
 
     /* HERO */
     .hero {
@@ -93,7 +93,7 @@
       color: white;
     }
 
-    /* HOW IT WORKS */
+    /* SECTIONS */
     .section {
       padding: 80px 60px;
       text-align: center;
@@ -111,6 +111,7 @@
       margin-bottom: 60px;
     }
 
+    /* HOW IT WORKS */
     .steps {
       display: flex;
       justify-content: center;
@@ -123,7 +124,6 @@
       border-radius: 16px;
       padding: 40px 30px;
       width: 240px;
-      position: relative;
     }
 
     .step-number {
@@ -140,20 +140,82 @@
       margin: 0 auto 20px;
     }
 
-    .step h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+    .step h3 { font-size: 1.1rem; margin-bottom: 10px; }
+    .step p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+    /* PORTFOLIO */
+    .portfolio-section {
+      background: #f8f9fa;
+      padding: 80px 60px;
+      text-align: center;
     }
 
-    .step p {
+    .portfolio-section h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .portfolio-section .subtitle {
       color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      margin-bottom: 60px;
+    }
+
+    .portfolio-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .portfolio-card:hover { transform: translateY(-5px); }
+
+    .portfolio-mock {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    .mock-plumber { background: linear-gradient(135deg, #1a1a2e, #2E86AB); }
+    .mock-salon   { background: linear-gradient(135deg, #c06c84, #f67280); }
+    .mock-restaurant { background: linear-gradient(135deg, #f7971e, #ffd200); color: #1a1a2e; }
+
+    .portfolio-info {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .portfolio-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .portfolio-info p { color: #888; font-size: 0.9rem; }
+
+    .portfolio-tag {
+      display: inline-block;
+      background: #e8f4f8;
+      color: #2E86AB;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 10px;
     }
 
     /* PRICING */
     .pricing-section {
-      background: #f8f9fa;
       padding: 80px 60px;
       text-align: center;
     }
@@ -186,10 +248,7 @@
       position: relative;
     }
 
-    .card.featured {
-      border: 3px solid #2E86AB;
-      transform: scale(1.05);
-    }
+    .card.featured { border: 3px solid #2E86AB; transform: scale(1.05); }
 
     .featured-badge {
       position: absolute;
@@ -204,10 +263,7 @@
       font-weight: 700;
     }
 
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 10px; }
 
     .card .price {
       font-size: 3rem;
@@ -216,17 +272,9 @@
       margin: 20px 0 5px;
     }
 
-    .card .price span {
-      font-size: 1rem;
-      color: #999;
-      font-weight: 400;
-    }
+    .card .price span { font-size: 1rem; color: #999; font-weight: 400; }
 
-    .card ul {
-      list-style: none;
-      margin: 25px 0 35px;
-      text-align: left;
-    }
+    .card ul { list-style: none; margin: 25px 0 35px; text-align: left; }
 
     .card ul li {
       padding: 8px 0;
@@ -235,11 +283,74 @@
       border-bottom: 1px solid #f0f0f0;
     }
 
-    .card ul li::before {
-      content: "✓ ";
-      color: #2E86AB;
-      font-weight: 700;
+    .card ul li::before { content: "✓ "; color: #2E86AB; font-weight: 700; }
+
+    /* FAQ */
+    .faq-section {
+      background: #f8f9fa;
+      padding: 80px 60px;
+      text-align: center;
     }
+
+    .faq-section h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .faq-section .subtitle {
+      color: #666;
+      font-size: 1.05rem;
+      margin-bottom: 60px;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 25px;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question:hover { color: #2E86AB; }
+
+    .faq-arrow {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+      color: #2E86AB;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 25px 22px;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
 
     /* CONTACT */
     .contact-section {
@@ -281,9 +392,7 @@
       transition: background 0.2s;
     }
 
-    .contact-link:hover {
-      background: rgba(255,255,255,0.25);
-    }
+    .contact-link:hover { background: rgba(255,255,255,0.25); }
 
     /* FOOTER */
     footer {
@@ -296,8 +405,9 @@
 
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
+      .nav-links a { margin-left: 15px; font-size: 0.85rem; }
       .hero h1 { font-size: 2rem; }
-      .section, .pricing-section { padding: 60px 20px; }
+      .section, .pricing-section, .faq-section, .portfolio-section { padding: 60px 20px; }
       .card.featured { transform: scale(1); }
     }
   </style>
@@ -307,9 +417,11 @@
   <!-- NAV -->
   <nav>
     <div class="logo">Quick<span>Pages</span></div>
-    <div>
+    <div class="nav-links">
       <a href="#how-it-works">How It Works</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -344,6 +456,42 @@
     </div>
   </section>
 
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section" id="portfolio">
+    <h2>Our Work</h2>
+    <p class="subtitle">Websites we've built for local businesses</p>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card">
+        <div class="portfolio-mock mock-plumber">AAA Plumbing</div>
+        <div class="portfolio-info">
+          <h3>AAA Plumbing Services</h3>
+          <p>Local plumbing company in McAllen, TX</p>
+          <span class="portfolio-tag">Plumbing</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-mock mock-salon">Glamour Studio</div>
+        <div class="portfolio-info">
+          <h3>Glamour Hair Studio</h3>
+          <p>Hair salon & beauty services in Edinburg, TX</p>
+          <span class="portfolio-tag">Beauty & Salon</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-mock mock-restaurant">La Cocina</div>
+        <div class="portfolio-info">
+          <h3>La Cocina Restaurant</h3>
+          <p>Family Mexican restaurant in Alton, TX</p>
+          <span class="portfolio-tag">Restaurant</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PRICING -->
   <section class="pricing-section" id="pricing">
     <h2>Simple, Honest Pricing</h2>
@@ -352,7 +500,7 @@
 
       <div class="card">
         <h3>One-Time</h3>
-        <div class="price">$250<span> one time</span></div>
+        <div class="price">$750<span> one time</span></div>
         <ul>
           <li>Professional website</li>
           <li>Mobile friendly design</li>
@@ -374,7 +522,76 @@
           <li>Priority support</li>
           <li>$250 setup fee applies</li>
         </ul>
-        <a href="STRIPE_LINK_HERE" class="btn btn-blue" id="subscribe-btn">Subscribe Now</a>
+        <a href="https://buy.stripe.com/cNi00jftTdHHaBzdt53Nm00" class="btn btn-blue" id="subscribe-btn">Subscribe Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p class="subtitle">Everything you need to know</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long does it take to build my website?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Most websites are completed within 5–7 business days after we receive your information and payment.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What do I need to provide?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Just your business name, contact info, a description of your services, and any photos you'd like to use. We handle everything else.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What does the $75/month include?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Hosting, maintenance, unlimited small updates (text, photos, hours, etc.), and priority support if anything ever goes wrong.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I cancel the monthly plan anytime?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes, you can cancel anytime with no penalty. Just send us a message and we'll stop the subscription immediately.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Will my website work on mobile phones?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Absolutely. Every website we build is fully responsive and looks great on phones, tablets, and desktops.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need to know anything about websites?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Not at all. We handle everything — design, building, hosting, and updates. You just run your business.
+        </div>
       </div>
 
     </div>
@@ -394,6 +611,17 @@
   <footer>
     <p>© 2026 QuickPages. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
